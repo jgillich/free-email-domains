@@ -1,6 +1,8 @@
 free-email-domains
 ---
 
+[![pipeline status](https://gitlab.com/synappio/free-email-domains/badges/master/pipeline.svg)](https://gitlab.com/synappio/free-email-domains/commits/master)
+
 A list of domains used by free email providers. Does not include [disposable email](https://en.wikipedia.org/wiki/Disposable_email_address). For that see the [disposable-email-domains](https://github.com/ivolo/disposable-email-domains) project.
 
 For a domain to be included on the list it has to be:
