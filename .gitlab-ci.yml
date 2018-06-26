@@ -1,0 +1,5 @@
+check:
+    script: check.sh
+    cache:
+        paths:
+            - tmp
