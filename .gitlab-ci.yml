@@ -1,4 +1,5 @@
 check:
+    image: python:3.6
     script: ./check.sh
     cache:
         paths:
