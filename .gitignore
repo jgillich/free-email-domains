@@ -1,0 +1,11 @@
+tmp/
+
+# backup files
+*~
+*.swp
+*.swo
+
+# python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
