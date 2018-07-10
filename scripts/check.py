@@ -1,3 +1,4 @@
+from concurrent import futures
 import json
 import sys
 
@@ -36,7 +37,8 @@ if domains != sorted_domains:
 
 disposable = set(_load('tmp/disposable-email-domains/index.json', from_json=True))
 assert 'mailinator.com' in disposable
-disposable = [d for d in domains if d in disposable]
+not_disposable = {'c2.hu'}
+disposable = [d for d in domains if (d in disposable) and (d not in not_disposable)]
 if disposable:
     print('Disposable domains: %s' % disposable)
     sys.exit(2)
@@ -49,12 +51,24 @@ if disposable:
     sys.exit(3)
 
 
-no_mx = []
-for d in domains:
-    try:
-        dns.resolver.query(d, 'MX')
-    except dns.exception.DNSException:
-        no_mx.append(d)
+def _checkMxRecord(d):
+    for r in ('', '8.8.8.8', '1.1.1.1', '8.8.4.4', '1.0.0.1'):
+        resolver = dns.resolver.Resolver()
+        resolver.timeout = 10
+        resolver.lifetime = 10
+        if r:
+            resolver.nameservers = [r]
+        try:
+            resolver.query(d, 'MX')
+            return
+        except dns.exception.DNSException:
+            pass
+    return d
+
+with futures.ThreadPoolExecutor(max_workers=10) as executor:
+    no_mx = executor.map(_checkMxRecord, domains)
+no_mx = [d for d in no_mx if d]
+
 if no_mx:
     print('Domains without MX records: %s' % no_mx)
     sys.exit(4)
