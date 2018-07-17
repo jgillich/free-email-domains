@@ -285,6 +285,7 @@ glay.org
 glendale.net
 gmail.com
 gmail.hu
+gmx.ch
 gmx.com
 gmx.de
 gmx.fr
