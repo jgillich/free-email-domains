@@ -285,7 +285,11 @@ glay.org
 glendale.net
 gmail.com
 gmail.hu
+gmx.com
+gmx.de
+gmx.fr
 gmx.net
+gmx.us
 go.com
 go.ro
 go.ru
@@ -344,6 +348,7 @@ hushmail.com
 i-france.com
 i-mail.com.au
 icestorm.com
+icloud.com
 icq.com
 icqmail.com
 icrazy.com
@@ -422,6 +427,7 @@ leonlai.net
 liberomail.com
 linuxmail.org
 list.ru
+live.com
 llangollen.com
 lobbyist.com
 london.com
@@ -1755,6 +1761,7 @@ moscowmail.com
 motormania.com
 movemail.com
 msgbox.com
+msn.com
 munich.com
 music.com
 musician.org
@@ -2142,6 +2149,7 @@ yahoofs.com
 yandex.ru
 yehey.com
 yepmail.net
+ymail.com
 yours.com
 yourwap.com
 yuuhuu.net
